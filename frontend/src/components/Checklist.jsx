@@ -99,7 +99,7 @@ export default function Checklist({ release }) {
       {steps.map((step) => (
         <label
           key={step.id}
-          className="flex min-w-0 cursor-pointer items-center gap-3 rounded-xl border border-base-300 bg-base-100 p-3 transition-[border-color,box-shadow] duration-200 hover:border-primary hover:shadow-md sm:p-4"
+          className="checklist-item flex min-w-0 cursor-pointer items-center gap-3 rounded-xl border border-base-300 bg-base-100 p-3 transition-[border-color,background-color,box-shadow] duration-200 sm:p-4"
         >
           <input
             type="checkbox"
@@ -110,7 +110,7 @@ export default function Checklist({ release }) {
           />
 
           <span
-            className={`min-w-0 text-md leading-snug ${
+            className={`min-w-0 font-mono font-bold text-sm leading-relaxed sm:text-md ${
               step.completed ? "line-through opacity-60" : ""
             }`}
           >

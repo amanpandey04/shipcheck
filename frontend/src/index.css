@@ -1,4 +1,233 @@
 @import "tailwindcss";
+
 @plugin "daisyui" {
-  themes: cmyk;
+  themes: shipcheck --default;
+}
+
+@plugin "daisyui/theme" {
+  name: "shipcheck";
+  default: true;
+  prefersdark: true;
+  color-scheme: dark;
+
+  /* Page, card, and input surfaces */
+  --color-base-100: #202024;
+  --color-base-200: #16161a;
+  --color-base-300: #34343b;
+  --color-base-content: #c4c4cc;
+
+  /* Primary pink */
+  --color-primary: #f582ae;
+  --color-primary-content: #232946;
+
+  /* Secondary cyan */
+  --color-secondary: #8bd3dd;
+  --color-secondary-content: #232946;
+
+  /* Accent cyan */
+  --color-accent: #8bd3dd;
+  --color-accent-content: #232946;
+
+  /* Deep stroke / neutral */
+  --color-neutral: #121629;
+  --color-neutral-content: #ffffff;
+
+  /* Semantic colors */
+  --color-info: #b8c1ec;
+  --color-info-content: #232946;
+
+  --color-success: #4ade80;
+  --color-success-content: #182b25;
+
+  --color-warning: #eebbc3;
+  --color-warning-content: #232946;
+
+  --color-error: #e888a1;
+  --color-error-content: #232946;
+
+  /* Rounded components */
+  --radius-selector: 0.75rem;
+  --radius-field: 0.75rem;
+  --radius-box: 1rem;
+
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+
+  --border: 1px;
+  --depth: 0;
+  --noise: 0;
+}
+
+@theme {
+  --font-sans: "Syne", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Syne", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+/* Overall application */
+html {
+  color-scheme: dark;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-base-200);
+  color: var(--color-base-content);
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  color: #ffffff;
+}
+
+/* Buttons and badges */
+.btn,
+.badge {
+  font-family: var(--font-mono);
+  font-weight: 600;
+}
+
+/* Release names */
+.release-name {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+/* MAIN ACTIONS: solid pink */
+.btn.btn-primary:not(.btn-soft) {
+  background-color: #f582ae;
+  border-color: #f582ae;
+  color: #232946;
+  font-weight: 600;
+}
+
+.btn.btn-primary:not(.btn-soft):hover {
+  filter: brightness(0.94);
+  box-shadow: 0 4px 14px rgb(18 22 41 / 30%);
+}
+
+/* SOFT PRIMARY: translucent pink */
+.btn.btn-primary.btn-soft {
+  background-color: rgb(245 130 174 / 14%);
+  border-color: rgb(245 130 174 / 38%);
+  color: #f582ae;
+  box-shadow: none;
+}
+
+.btn.btn-primary.btn-soft:hover {
+  background-color: rgb(245 130 174 / 24%);
+  border-color: #f582ae;
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgb(18 22 41 / 25%);
+}
+
+/* SECONDARY ACTIONS: soft cyan */
+.btn.btn-secondary.btn-soft {
+  background-color: rgb(139 211 221 / 14%);
+  border-color: rgb(139 211 221 / 38%);
+  color: #8bd3dd;
+  box-shadow: none;
+}
+
+.btn.btn-secondary.btn-soft:hover {
+  background-color: rgb(139 211 221 / 24%);
+  border-color: #8bd3dd;
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgb(18 22 41 / 25%);
+}
+
+/* VIEW RELEASE: soft cyan */
+.btn.btn-soft.btn-view {
+  background-color: rgb(139 211 221 / 14%);
+  border-color: rgb(139 211 221 / 38%);
+  color: #8bd3dd;
+  box-shadow: none;
+}
+
+.btn.btn-soft.btn-view:hover {
+  background-color: rgb(139 211 221 / 26%);
+  border-color: #8bd3dd;
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgb(18 22 41 / 25%);
+}
+
+/* DELETE: retain the red treatment */
+.btn.btn-error.btn-soft {
+  background-color: rgb(232 136 161 / 12%);
+  border-color: rgb(232 136 161 / 38%);
+  color: #f3b8c7;
+  box-shadow: none;
+}
+
+.btn.btn-error.btn-soft:hover {
+  background-color: rgb(232 136 161 / 24%);
+  border-color: #e888a1;
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgb(18 22 41 / 25%);
+}
+
+/* View Release: lavender, visibly different from Delete */
+.release-card .btn.btn-primary.btn-soft {
+  background-color: rgb(184 193 236 / 15%);
+  border-color: rgb(184 193 236 / 42%);
+  color: #dce2ff;
+}
+
+.release-card .btn.btn-primary.btn-soft:hover {
+  background-color: rgb(184 193 236 / 27%);
+  border-color: #b8c1ec;
+  color: #ffffff;
+}
+
+/* Release cards */
+.release-card {
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.release-card:hover {
+  background-color: #353e65;
+  border-color: #b8c1ec;
+  box-shadow:
+    0 0 0 1px rgb(184 193 236 / 10%),
+    0 12px 28px rgb(18 22 41 / 30%);
+}
+
+/* Checklist items */
+.checklist-item {
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.checklist-item:hover {
+  background-color: #2a2a31;
+  border-color: #5a5a67;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 18%);
+}
+
+.checklist-item:focus-within {
+  border-color: #eebbc3;
+  box-shadow: 0 0 0 2px rgb(238 187 195 / 18%);
+}
+
+/* Visible keyboard focus */
+.btn:focus-visible,
+a:focus-visible {
+  outline: 2px solid #8bd3dd;
+  outline-offset: 2px;
+}
+
+input:focus-visible,
+textarea:focus-visible {
+  outline: 1px solid rgb(139 211 221 / 55%);
+  outline-offset: 1px;
 }

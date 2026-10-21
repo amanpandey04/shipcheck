@@ -75,7 +75,7 @@ export default function CreateReleasePage() {
 
               <input
                 type="text"
-                className="input input-bordered w-full rounded-l-none"
+                className="input input-bordered w-full rounded-l-none border-base-300 bg-base-200 text-base-content placeholder:text-base-content/50 focus:border-[#8bd3dd] focus:ring-0"
                 placeholder="2.4.0, beta, alpha"
                 value={name}
                 onChange={(event) => setName(event.target.value)}
@@ -91,7 +91,7 @@ export default function CreateReleasePage() {
 
             <input
               type="date"
-              className="input input-bordered w-full"
+              className="input input-bordered w-full border-base-300 bg-base-200 text-base-content focus:border-[#8bd3dd] focus:ring-0"
               value={date}
               onChange={(event) => setDate(event.target.value)}
               required
@@ -102,7 +102,7 @@ export default function CreateReleasePage() {
             <span className="mb-2 block font-medium">Additional Information:</span>
 
             <textarea
-              className="textarea textarea-bordered min-h-36 w-full"
+              className="textarea textarea-bordered mt-2 min-h-36 w-full border-base-300 bg-base-200 text-base-content placeholder:text-base-content/50 focus:border-[#8bd3dd] focus:ring-0"
               placeholder="Optional notes about this release..."
               value={additionalInfo}
               onChange={(event) => setAdditionalInfo(event.target.value)}
@@ -120,7 +120,7 @@ export default function CreateReleasePage() {
               Cancel
             </Link>
 
-            <button type="submit" className="btn btn-primary" disabled={loading}>
+            <button type="submit" className="btn btn-secondary" disabled={loading}>
               {loading ? (
                 <>
                   <span className="loading loading-spinner loading-sm" />

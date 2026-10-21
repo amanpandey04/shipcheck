@@ -102,7 +102,7 @@ export default function ReleaseDetailsPage() {
 
         <button
           type="button"
-          className="btn btn-error btn-soft btn-sm shrink-0"
+          className="btn btn-error btn-sm shrink-0"
           onClick={handleDelete}
           disabled={deleting}
         >
@@ -114,7 +114,7 @@ export default function ReleaseDetailsPage() {
         <div className="card-body gap-6">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
             <div>
-              <h1 className="text-3xl font-bold tracking-tight">{release.name}</h1>
+              <h1 className="release-name text-2xl tracking-tight sm:text-3xl">{release.name}</h1>
 
               <p className="mt-1 text-base-content/60">{formatReleaseDate(release.date)}</p>
             </div>
@@ -128,7 +128,7 @@ export default function ReleaseDetailsPage() {
 
           <div>
             <div className="mb-2 flex items-center justify-between">
-              <span className="font-medium">Progress</span>
+              <span className="font-mono font-medium">Progress</span>
 
               <span className="text-sm text-base-content/70">
                 {release.completedStepsCount}/{release.totalSteps} completed

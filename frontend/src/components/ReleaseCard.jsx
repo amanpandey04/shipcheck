@@ -52,7 +52,7 @@ export default function ReleaseCard({ release }) {
       <div className="card-body gap-4">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
           <div>
-            <h2 className="card-title">{release.name}</h2>
+            <h2 className="card-title release-name">{release.name}</h2>
 
             <p className="text-sm text-base-content/60">{formatReleaseDate(release.date)}</p>
           </div>
@@ -62,9 +62,9 @@ export default function ReleaseCard({ release }) {
 
         <div>
           <div className="mb-1 flex items-center justify-between text-sm">
-            <span className="text-base-content/70">Checklist progress</span>
+            <span className="font-mono text-base-content/70">Checklist Progress</span>
 
-            <span className="font-medium">
+            <span className="font-mono font-medium tabular-nums">
               {release.completedStepsCount}/{release.totalSteps}
             </span>
           </div>
@@ -84,7 +84,7 @@ export default function ReleaseCard({ release }) {
             {deleting ? "Deleting..." : "Delete"}
           </button>
 
-          <Link to={`/releases/${release.id}`} className="btn btn-primary btn-soft btn-sm">
+          <Link to={`/releases/${release.id}`} className="btn btn-soft btn-view btn-sm">
             View Release
           </Link>
         </div>

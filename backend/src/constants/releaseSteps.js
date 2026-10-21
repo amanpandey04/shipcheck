@@ -1,34 +1,34 @@
 export const RELEASE_STEPS = [
   {
     id: "changes-reviewed",
-    label: "Review all merged changes",
+    label: "Reviewed & merged all changes",
   },
   {
     id: "changelog-updated",
-    label: "Update CHANGELOG",
+    label: "Updated CHANGELOG.md",
   },
   {
     id: "migrations-verified",
-    label: "Verify database migrations",
+    label: "Verified database migrations",
   },
   {
     id: "tests-passed",
-    label: "Run automated tests",
+    label: "Ran automated tests",
   },
   {
     id: "release-notes-ready",
-    label: "Prepare release notes",
+    label: "Prepared release notes",
   },
   {
     id: "staging-deployed",
-    label: "Deploy to staging",
+    label: "Deployed to staging",
   },
   {
     id: "qa-completed",
-    label: "Complete QA verification",
+    label: "Completed QA verification",
   },
   {
     id: "production-deployed",
-    label: "Deploy to production",
+    label: "Deployed to production",
   },
 ];
