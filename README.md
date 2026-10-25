@@ -17,8 +17,7 @@
 </p>
 
 <p align="center">
-  <a href="https://shipcheck-tool.vercel.app/">Live Demo</a> ·
-  <a href="https://github.com/amanpandey04/shipcheck">Source Code</a>
+  <a href="https://shipcheck-tool.vercel.app/">Live Demo</a>
 </p>
 
 <p align="center">
@@ -465,16 +464,8 @@ Potential future enhancements include:
 - Load testing for concurrent writes and larger workloads
 - Monitoring and structured logging for production operations
 
-## Author
-
-**Aman Pandey**
-
-- GitHub: [amanpandey04](https://github.com/amanpandey04)
-- Project repository: [ShipCheck](https://github.com/amanpandey04/shipcheck)
-- Live application: [shipcheck-tool.vercel.app](https://shipcheck-tool.vercel.app/)
-
 ---
 
 <p align="center">
-  <strong>ShipCheck — Plan · Track · Ship</strong>
+  <strong>Plan · Track · Ship</strong>
 </p>
