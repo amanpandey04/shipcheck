@@ -5,15 +5,12 @@ import Checklist from "../components/Checklist";
 import AdditionalInfoForm from "../components/AdditionalInfoForm";
 import { formatReleaseDate } from "../utils/formatReleaseDate";
 
+import { TrashIcon } from "../components/Icons";
+import ReleaseStatusBadge from "../components/ReleaseStatusBadge";
+
 import { removeReleaseFromList } from "../graphql/cacheUpdates";
 import { DELETE_RELEASE } from "../graphql/mutations";
 import { GET_RELEASE } from "../graphql/queries";
-
-const statusStyles = {
-  PLANNED: "badge-ghost",
-  ONGOING: "badge-warning",
-  DONE: "badge-success",
-};
 
 export default function ReleaseDetailsPage() {
   const { id } = useParams();
@@ -102,11 +99,21 @@ export default function ReleaseDetailsPage() {
 
         <button
           type="button"
-          className="btn btn-error btn-sm shrink-0"
+          className="btn btn-error btn-sm shrink-0 gap-2"
           onClick={handleDelete}
           disabled={deleting}
         >
-          {deleting ? "Deleting..." : "Delete Release"}
+          {deleting ? (
+            <>
+              <span className="loading loading-spinner loading-xs" />
+              Deleting...
+            </>
+          ) : (
+            <>
+              <TrashIcon size={16} />
+              Delete Release
+            </>
+          )}
         </button>
       </div>
 
@@ -120,9 +127,7 @@ export default function ReleaseDetailsPage() {
             </div>
 
             <div className="flex flex-wrap items-center gap-2">
-              <span className={`badge badge-lg ${statusStyles[release.status]}`}>
-                {release.status}
-              </span>
+              <ReleaseStatusBadge status={release.status} large />
             </div>
           </div>
 

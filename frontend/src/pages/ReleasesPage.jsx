@@ -29,9 +29,13 @@ export default function ReleasesPage() {
   return (
     <section className="space-y-6">
       <div>
-        <p className="text-sm font-medium uppercase tracking-wide text-primary">Releases</p>
+        <p className="text-sm font-medium uppercase tracking-wide text-primary">
+          Release Checklist
+        </p>
 
-        <h1 className="mt-1 text-3xl font-bold tracking-tight sm:text-4xl">Release Checklist</h1>
+        <h1 className="mt-1 text-3xl text-primary font-bold tracking-tight sm:text-4xl">
+          Releases
+        </h1>
 
         <p className="mt-2 max-w-2xl text-base-content/70">
           Track the progress of your software releases from planning through production.

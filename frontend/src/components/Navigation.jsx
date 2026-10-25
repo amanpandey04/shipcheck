@@ -1,4 +1,5 @@
 import { Link } from "react-router";
+import { PlusIcon } from "./Icons";
 
 export default function Navigation() {
   return (
@@ -25,8 +26,8 @@ export default function Navigation() {
         </div>
 
         <div className="flex flex-none items-center gap-2">
-          <Link to="/releases/new" className="btn btn-secondary btn-sm sm:btn-md">
-            <span aria-hidden="true">+</span>
+          <Link to="/releases/new" className="btn btn-secondary btn-sm gap-2 sm:btn-md">
+            <PlusIcon size={16} />
             <span className="hidden sm:inline">New Release</span>
             <span className="sm:hidden">New</span>
           </Link>

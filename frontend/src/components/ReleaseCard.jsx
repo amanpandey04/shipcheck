@@ -5,13 +5,10 @@ import { useMutation } from "@apollo/client/react";
 import { DELETE_RELEASE } from "../graphql/mutations";
 import { removeReleaseFromList } from "../graphql/cacheUpdates";
 
-import { formatReleaseDate } from "../utils/formatReleaseDate";
+import { EyeIcon, TrashIcon } from "./Icons";
+import ReleaseStatusBadge from "./ReleaseStatusBadge";
 
-const statusStyles = {
-  PLANNED: "badge-ghost",
-  ONGOING: "badge-warning",
-  DONE: "badge-success",
-};
+import { formatReleaseDate } from "../utils/formatReleaseDate";
 
 export default function ReleaseCard({ release }) {
   const [deleteError, setDeleteError] = useState("");
@@ -57,7 +54,7 @@ export default function ReleaseCard({ release }) {
             <p className="text-sm text-base-content/60">{formatReleaseDate(release.date)}</p>
           </div>
 
-          <span className={`badge ${statusStyles[release.status]}`}>{release.status}</span>
+          <ReleaseStatusBadge status={release.status} />
         </div>
 
         <div>
@@ -77,14 +74,25 @@ export default function ReleaseCard({ release }) {
         <div className="card-actions justify-end">
           <button
             type="button"
-            className="btn btn-error btn-soft btn-sm"
+            className="btn btn-error btn-soft btn-sm gap-2"
             onClick={handleDelete}
             disabled={deleting}
           >
-            {deleting ? "Deleting..." : "Delete"}
+            {deleting ? (
+              <>
+                <span className="loading loading-spinner loading-xs" />
+                Deleting...
+              </>
+            ) : (
+              <>
+                <TrashIcon size={16} />
+                Delete
+              </>
+            )}
           </button>
 
-          <Link to={`/releases/${release.id}`} className="btn btn-soft btn-view btn-sm">
+          <Link to={`/releases/${release.id}`} className="btn btn-soft btn-view btn-sm gap-2">
+            <EyeIcon size={16} />
             View Release
           </Link>
         </div>
