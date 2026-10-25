@@ -6,7 +6,9 @@
   "scripts": {
     "start": "node src/server.js",
     "dev": "node --watch src/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage"
   },
   "keywords": [],
   "author": "",
@@ -21,6 +23,8 @@
     "pg": "^8.23.1"
   },
   "devDependencies": {
-    "prisma": "^7.10.0"
+    "@vitest/coverage-v8": "^5.0.5",
+    "prisma": "^7.10.0",
+    "vitest": "^5.0.5"
   }
 }
